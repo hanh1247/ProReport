@@ -39,11 +39,13 @@ if st.button("Bắt đầu xử lý"):
       df = df.drop(i, axis=1)
 
     df = df[(df["Số ĐKNSH"]!="Số ĐKNSH") | (df["Số ĐKNSH"]!="Tổng cộng")]
+     
     def fillnullvn(z):
       if "VN0000" not in z:
         return ""
       else:
         return z
+   
     df["STT"] = df["STT"].astype(str).apply(lambda z: fillnullvn(z))
     for i in range (0, len(df)):
       if df["STT"][i] == "":
