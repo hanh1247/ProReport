@@ -25,9 +25,9 @@ if st.button("Bắt đầu xử lý"):
     for file in uploaded: 
       name_file_uploaded = file
       print(f"File: {file}")
-    df_0 = pd.read_excel(file, sheet_name= 0, skiprows =11)
-    sheets = pd.ExcelFile(file).sheet_names
-    len_sheets= len(sheets)
+      df_0 = pd.read_excel(file, sheet_name= 0, skiprows =11)
+      sheets = pd.ExcelFile(file).sheet_names
+      len_sheets= len(sheets)
     for i in range(1,len_sheets):
       df_1 = pd.read_excel(file,sheet_name=i)
       df = pd.concat([df_0, df_1], axis=0, ignore_index=True)
