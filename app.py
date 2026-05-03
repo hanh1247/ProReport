@@ -75,7 +75,7 @@ if st.button("Bắt đầu xử lý"):
 
     buffer = io.BytesIO()
    
-    with pd.ExcelWriter(buffer, engine="xlsxwriter") as writer:
+    with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
         df_result.to_excel(writer, index=False)
    
     buffer.seek(0)
