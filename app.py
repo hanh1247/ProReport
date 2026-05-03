@@ -43,7 +43,7 @@ if st.button("Bắt đầu xử lý"):
           return ""
        else:
           return z
-    df["STT"] = df["STT"].astype(str).apply(lambda z: fillnullvn(z))
+    df =  df["STT"].astype(str).apply(fillnullvn)
     for i in range (0, len(df)):
       if df["STT"][i] == "":
         df["STT"][i] = df["STT"][i-1]
