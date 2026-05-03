@@ -4,9 +4,9 @@ import time
 import io
 from datetime import date
 
-st.set_page_config(page_title="Tool Xử Lý file", layout="centered")
+st.set_page_config(page_title="Tool Xử Lý File", layout="centered")
 
-st.title(" Tool Xử Lý tệp Số dư TK lưu ký chứng khoán")
+st.title(" Tool Xử Lý Báo cáo Số dư TKLK Chứng khoán")
 st.write("Vui lòng tải file lên, hệ thống sẽ xử lý và trả lại file kết quả.")
 
 # 1. Widget Upload File
