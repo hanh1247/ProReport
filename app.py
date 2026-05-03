@@ -73,15 +73,15 @@ if st.button("Bắt đầu xử lý"):
         #csv = df_result.to_csv(index=False).encode('utf-8-sig')
     # df_result.to_excel(index=False)
 
-    buffer = io.BytesIO()
+    # buffer = io.BytesIO()
    
-    with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
-        df_result.to_excel(writer, index=False)
+    # with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
+    #     df_result.to_excel(writer, index=False)
    
-    buffer.seek(0)
+    # buffer.seek(0)
    
     st.download_button(
         "Download Excel",
-        data=buffer,
+        data=df_result,
         file_name=f"Processed_{name_file_uploaded}.xlsx"
     )
