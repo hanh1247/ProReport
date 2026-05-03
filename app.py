@@ -81,4 +81,5 @@ if st.button("Bắt đầu xử lý"):
           label="Download Excel",
           data=buffer,
           file_name=f"Processed_{name_file_uploaded}.xlsx",
-          mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+          # mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
