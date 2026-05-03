@@ -74,7 +74,7 @@ if st.button("Bắt đầu xử lý"):
     df_result.to_excel(index=False)
 
     buffer = io.BytesIO()
-    df_result.to_excel(buffer, index=False)
+    df_result.to_excel(buffer)
     buffer.seek(0)
 
     st.download_button(
