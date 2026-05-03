@@ -71,7 +71,7 @@ if st.button("Bắt đầu xử lý"):
             # 3. Chuẩn bị file để User tải về
             # Chuyển DataFrame thành CSV hoặc Excel để download
         #csv = df_result.to_csv(index=False).encode('utf-8-sig')
-    df_result.to_excel(index=False)
+    # df_result.to_excel(index=False)
 
     buffer = io.BytesIO()
     df_result.to_excel(buffer)
