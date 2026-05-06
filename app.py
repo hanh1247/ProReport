@@ -36,11 +36,14 @@ if st.button("Bắt đầu xử lý"):
     else:
          df = df_0 
         # df.columns
-    del_col=[ "Unnamed: 0","Unnamed: 1", "Unnamed: 2", "Unnamed: 3",
-       "Tổng cộng", "Unnamed: 5", "Unnamed: 6", "Unnamed: 7", "Unnamed: 8",
-       "Unnamed: 9", "1"]
-    for i in del_col:
-      df = df.drop(i, axis=1)
+    #del_col=[ "Unnamed: 0","Unnamed: 1", "Unnamed: 2", "Unnamed: 3",
+    #   "Tổng cộng", "Unnamed: 5", "Unnamed: 6", "Unnamed: 7", "Unnamed: 8",
+     #  "Unnamed: 9", "1"]
+    col_list = df.columns.tolist() 
+    for i in col_list:
+       if i.startswith("Unnamed:") or i.startswith("1"):
+         df = df.drop(columns=[i])
+       
     df = df[(df["Số ĐKNSH"]!="Số ĐKNSH") | (df["Số ĐKNSH"]!="Tổng cộng")]
     
     def fillnullvn(x):
