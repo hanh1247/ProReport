@@ -29,9 +29,12 @@ if st.button("Bắt đầu xử lý"):
       df_0 = pd.read_excel(file, sheet_name= 0, skiprows =11)
       sheets = pd.ExcelFile(file).sheet_names
       len_sheets= len(sheets)
-    for i in range(1,len_sheets):
-      df_1 = pd.read_excel(file,sheet_name=i)
-      df = pd.concat([df_0, df_1], axis=0, ignore_index=True)
+    if len_sheets>1:
+       for i in range(1,len_sheets):
+         df_1 = pd.read_excel(file,sheet_name=i)
+         df = pd.concat([df_0, df_1], axis=0, ignore_index=True)
+    else:
+         df = df_0 
         # df.columns
     del_col=[ "Unnamed: 0","Unnamed: 1", "Unnamed: 2", "Unnamed: 3",
        "Tổng cộng", "Unnamed: 5", "Unnamed: 6", "Unnamed: 7", "Unnamed: 8",
